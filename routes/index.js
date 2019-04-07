@@ -3,12 +3,12 @@ var express = require('express');
 var router  = express.Router();
 
 router.get('/', function(req, res) {
-  models.User.findAll({
-    include: [ models.Task ]
-  }).then(function(users) {
+  models.Farmer.findAll({
+    include: [ models.Farm ]
+  }).then(function(farmers) {
     res.render('index', {
       title: 'Sequelize: Express Example',
-      users: users
+      farmers: farmers
     });
   });
 });
